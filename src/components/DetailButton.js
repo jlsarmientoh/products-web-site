@@ -3,7 +3,7 @@
 class DetailButton extends React.Component {
     render() {
         return (
-            <a href="#" onClick={this.props.onClick}>{this.props.label}</a>
+            <a href="#" onClick={() => this.props.onClick()}>{this.props.label}</a>
         );
     }
 }
