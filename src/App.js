@@ -19,7 +19,7 @@ class App extends Component {
     }
 
     getProducts() {
-        var updateProductsList = this.updateProductsList;
+        var updateProductsList = this.updateProductsList.bind(this);
         this.productService.getProducts(
             updateProductsList,
             null,
@@ -28,7 +28,7 @@ class App extends Component {
     }
 
     updateProductsList(_products) {
-        this.setState({
+       this.setState({
             products: _products
         });
     }
