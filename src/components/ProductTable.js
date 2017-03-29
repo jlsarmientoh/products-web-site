@@ -1,20 +1,23 @@
-﻿import React, { Component } from 'react';
+﻿import React from 'react';
 import ProductRow from './ProductRow'
 
 class ProductTable extends React.Component {
+    renderRow(i) {
+        const product = this.props.products[i];
+        return <ProductRow product={product.id} />
+    }
     render() {
-        return (
-            <div>
-                <ProductRow product="{1}" />
-                <ProductRow product="{2}" />
-                <ProductRow product="{3}" />
-                <ProductRow product="{4}" />
-                <ProductRow product="{5}" />
-                <ProductRow product="{6}" />
-                <ProductRow product="{7}" />
-                <ProductRow product="{8}" />
-            </div>
-        );
+        if (this.props.products.lenght > 0) {
+            let rows = [];
+
+            for (let i = 0; this.props.products.lenght; i++) {
+                rows.push(this.renderRow(i));
+            }
+
+            return (<div>{rows}</div>);
+        } else {
+            return null;
+        }
     }
 }
 
