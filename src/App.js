@@ -5,17 +5,22 @@ import ProductTable from './components/ProductTable'
 import ProductService from './services/ProductsService'
 
 class App extends Component {
-    constructor(productService) {
+    constructor() {
         super();
-        let _productService = productService;
+        this.productService = new ProductService();
         this.state = {
             products: []
-        }
+        };
+        this.initialize();
+    }
+
+    initialize() {
+        this.getProducts();
     }
 
     getProducts() {
         var updateProductsList = this.updateProductsList;
-        this._productService.getProducts(
+        this.productService.getProducts(
             updateProductsList,
             null,
             null

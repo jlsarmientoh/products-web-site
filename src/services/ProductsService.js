@@ -2,9 +2,6 @@
 
 class ProductService {
 
-    host = ""
-    api = ""
-
     constructor() {
         this.host = "http://localhost:51376/"
         this.api = "api/products"
@@ -51,4 +48,4 @@ class ProductService {
     }
 };
 
-var productService = new ProductService();
+export default ProductService;
