@@ -5,12 +5,14 @@ import ProductTable from './components/ProductTable'
 import ProductService from './services/ProductsService'
 
 class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.productService = new ProductService();
         this.state = {
             products: []
         };
+
+        this.updateProductsList = this.updateProductsList.bind(this);
         this.initialize();
     }
 
@@ -19,9 +21,8 @@ class App extends Component {
     }
 
     getProducts() {
-        var updateProductsList = this.updateProductsList.bind(this);
         this.productService.getProducts(
-            updateProductsList,
+            this.updateProductsList,
             null,
             null
         );

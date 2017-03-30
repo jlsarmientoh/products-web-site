@@ -4,7 +4,7 @@ import ProductRow from './ProductRow'
 class ProductTable extends React.Component {
     renderRow(i) {
         const product = this.props.products[i];
-        return <ProductRow id={product.Id} product={product} />
+        return <ProductRow key={product.Id} id={product.Id} product={product} />
     }
     render() {
         if (this.props.products.length > 0) {
