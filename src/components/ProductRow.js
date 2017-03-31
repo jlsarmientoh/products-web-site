@@ -5,7 +5,7 @@ class ProductRow extends React.Component {
     render() {
         return (
             <div className="board-row">
-                {this.props.product.Id} <DetailButton label="View" onClick={() => console.log(this.props.product.Id)}/>
+                {this.props.product.Id} {this.props.product.Name}<DetailButton label="View" onClick={() => console.log(this.props.product.Id)}/>
             </div>
         );
     }

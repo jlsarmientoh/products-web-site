@@ -60,6 +60,7 @@ class App extends Component {
                     <div>
                         <ProductForm onFormSubmit={this.handleFormSubmit} />
                     </div>
+                    <br />
                     <div>
                         <ProductTable products={this.state.products} />
                     </div>
