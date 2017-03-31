@@ -32,10 +32,8 @@ class ProductForm extends React.Component {
     }
 
     handleSubmit(event) {
-        const target = event.target;
         const newProduct = this.state;
-        alert('A name was submitted: ' + event.target);
-        debugger
+
         this.props.onFormSubmit(newProduct);
         event.preventDefault();
     }
@@ -73,13 +71,13 @@ class ProductForm extends React.Component {
                     <input type="date" id="txSellStartDate" name="SellStartDate" onChange={this.handleInputChange} />
                     <br />
                     <label htmlFor="txSellEndDate">SellEndDate: </label>
-                    <input type="date" id="txSellEndDate" name="SellEndDate" onChange={this.handleInputChange} />
+                    <input type="date" id="txSellEndDate" required name="SellEndDate" onChange={this.handleInputChange} />
                     <br />
                     <label htmlFor="txDiscontinuedDate">DiscontinuedDate: </label>
-                    <input type="date" id="txDiscontinuedDate" name="DiscontinuedDate" onChange={this.handleInputChange} />
+                    <input type="date" id="txDiscontinuedDate" required name="DiscontinuedDate" onChange={this.handleInputChange} />
                     <br />
                     <label htmlFor="txThumbNailPhoto">ThumbNailPhoto: </label>
-                    <input type="text" id="txThumbNailPhoto" name="ThumbNailPhoto" onChange={this.handleInputChange} />
+                    <input type="text" id="txThumbNailPhoto" required name="ThumbNailPhoto" onChange={this.handleInputChange} />
                 </fieldset>
                 <input type="submit" value="Create"/>
             </form>

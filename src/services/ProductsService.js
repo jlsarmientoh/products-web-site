@@ -8,7 +8,7 @@ class ProductService {
     }
     
     getProducts = function (_onSuccess, _onFail, _finally) {
-        var requestUrl = this.host + this.api
+        var requestUrl = this.host + this.api;
         this._sendRequest(requestUrl, "GET", null, _onSuccess, _onFail, _finally);
     }
 
@@ -18,16 +18,17 @@ class ProductService {
     }
 
     createProduct = function (_product, _onSuccess, _onFail, _finally) {
-        var requestUrl = this.host + this.api
+        var requestUrl = this.host + this.api;
         this._sendRequest(requestUrl, "POST", _product, _onSuccess, _onFail, _finally);
     }
 
     _sendRequest(_requestUrl, _type, _body, _onSuccess, _onFail, _finally) {
         $.ajax({
             url: _requestUrl,
-            data: _body,
+            data: JSON.stringify(_body),
             type: _type,
-            dataType: "json"
+            dataType: "json",
+            contentType: "application/json"
         }).done(function (result) {
             if (_onSuccess) {
                 _onSuccess(result)
@@ -43,7 +44,6 @@ class ProductService {
             if (_finally) {
                 _finally(xhr, status);
             }
-            alert("The request is complete!");
         });
     }
 };

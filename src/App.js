@@ -37,7 +37,12 @@ class App extends Component {
     }
 
     handleFormSubmit(product) {
-        alert(product.Name);
+        this.productService.createProduct(
+            product,
+            function () { alert('Product created') },
+            function () { alert('Product NOT created') },
+            null
+        );
     }
 
     render() {
