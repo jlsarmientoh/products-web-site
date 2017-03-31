@@ -53,31 +53,28 @@ class ProductForm extends React.Component {
                     <input type="text" id="txColor" name="Color" onChange={this.handleInputChange} />
                     <br />
                     <label htmlFor="txStandardCost">StandardCost: </label>
-                    <input type="text" id="txStandardCost" name="StandardCost" onChange={this.handleInputChange} />
+                    <input type="number" id="txStandardCost" name="StandardCost" min="0" onChange={this.handleInputChange} />
                     <br />
                     <label htmlFor="txListPrice">ListPrice: </label>
-                    <input type="text" id="txListPrice" name="ListPrice" onChange={this.handleInputChange} />
+                    <input type="number" id="txListPrice" name="ListPrice" min="0" onChange={this.handleInputChange} />
                     <br />
                     <label htmlFor="txSize">Size: </label>
-                    <input type="text" id="txSize" name="Size" onChange={this.handleInputChange} />
+                    <input type="text" id="txSize" name="Size" maxLength="5" onChange={this.handleInputChange} />
                     <br />
                     <label htmlFor="txWeight">Weight: </label>
-                    <input type="text" id="txWeight" name="Weight" onChange={this.handleInputChange} />
-                    <br />
-                    <label htmlFor="txSize">Size: </label>
-                    <input type="text" id="txSize" name="Size" onChange={this.handleInputChange} />
+                    <input type="number" id="txWeight" name="Weight" min="0" onChange={this.handleInputChange} />
                     <br />
                     <label htmlFor="txSellStartDate">SellStartDate: </label>
-                    <input type="date" id="txSellStartDate" name="SellStartDate" onChange={this.handleInputChange} />
+                    <input type="date" id="txSellStartDate" name="SellStartDate" required onChange={this.handleInputChange} />
                     <br />
                     <label htmlFor="txSellEndDate">SellEndDate: </label>
-                    <input type="date" id="txSellEndDate" required name="SellEndDate" onChange={this.handleInputChange} />
+                    <input type="date" id="txSellEndDate" name="SellEndDate" required onChange={this.handleInputChange} />
                     <br />
                     <label htmlFor="txDiscontinuedDate">DiscontinuedDate: </label>
-                    <input type="date" id="txDiscontinuedDate" required name="DiscontinuedDate" onChange={this.handleInputChange} />
+                    <input type="date" id="txDiscontinuedDate" name="DiscontinuedDate" required onChange={this.handleInputChange} />
                     <br />
                     <label htmlFor="txThumbNailPhoto">ThumbNailPhoto: </label>
-                    <input type="text" id="txThumbNailPhoto" required name="ThumbNailPhoto" onChange={this.handleInputChange} />
+                    <input type="text" id="txThumbNailPhoto" name="ThumbNailPhoto" onChange={this.handleInputChange} />
                 </fieldset>
                 <input type="submit" value="Create"/>
             </form>

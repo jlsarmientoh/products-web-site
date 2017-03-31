@@ -53,7 +53,7 @@ class App extends Component {
                 <h2>Welcome to Products UI</h2>
             </div>
             <p className="App-intro">
-                To get started, edit <code>src/App.js</code> and save to reload.
+                Scroll down to see the list of products.
             </p>
 
             <div className="container">
