@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import ProductTable from './components/ProductTable'
+import ProductForm from './components/ProductForm'
 import ProductService from './services/ProductsService'
 
 class App extends Component {
@@ -13,6 +14,7 @@ class App extends Component {
         };
 
         this.updateProductsList = this.updateProductsList.bind(this);
+        this.handleFormSubmit = this.handleFormSubmit.bind(this);
         this.initialize();
     }
 
@@ -34,6 +36,10 @@ class App extends Component {
         });
     }
 
+    handleFormSubmit(product) {
+        alert(product.Name);
+    }
+
     render() {
         return (
             <div className="App">
@@ -47,8 +53,11 @@ class App extends Component {
 
             <div className="container">
                     <div>
+                        <ProductForm onFormSubmit={this.handleFormSubmit} />
+                    </div>
+                    <div>
                         <ProductTable products={this.state.products} />
-                </div>
+                    </div>
             </div>
             </div>
         );

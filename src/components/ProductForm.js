@@ -32,39 +32,54 @@ class ProductForm extends React.Component {
     }
 
     handleSubmit(event) {
-        alert('A name was submitted');
+        const target = event.target;
+        const newProduct = this.state;
+        alert('A name was submitted: ' + event.target);
+        debugger
+        this.props.onFormSubmit(newProduct);
         event.preventDefault();
     }
 
     render() {
         return (
-            <form onSubmit="{this.handleSubmit}">
+            <form onSubmit={this.handleSubmit}>
                 <fieldset>
                     <legend>Create New Product</legend>
-                    <label for="txName">Name: </label>
-                    <input type="text" id="txName" name="Name" />
-                    <label for="txProductNumber">ProductNumber: </label>
-                    <input type="text" id="txProductNumber" name="ProductNumber" />
-                    <label for="txColor">Color: </label>
-                    <input type="text" id="txColor" name="Color" />
-                    <label for="txStandardCost">StandardCost: </label>
-                    <input type="text" id="txStandardCost" name="StandardCost" />
-                    <label for="txListPrice">ListPrice: </label>
-                    <input type="text" id="txListPrice" name="ListPrice" />
-                    <label for="txSize">Size: </label>
-                    <input type="text" id="txSize" name="Size" />
-                    <label for="txWeight">Weight: </label>
-                    <input type="text" id="txWeight" name="Weight" />
-                    <label for="txSize">Size: </label>
-                    <input type="text" id="txSize" name="Size" />
-                    <label for="txSellStartDate">SellStartDate: </label>
-                    <input type="text" id="txSellStartDate" name="SellStartDate" />
-                    <label for="txSellEndDate">SellEndDate: </label>
-                    <input type="text" id="txSellEndDate" name="SellEndDate" />
-                    <label for="txDiscontinuedDate">DiscontinuedDate: </label>
-                    <input type="text" id="txDiscontinuedDate" name="DiscontinuedDate" />
-                    <label for="txThumbNailPhoto">ThumbNailPhoto: </label>
-                    <input type="text" id="txThumbNailPhoto" name="ThumbNailPhoto" />
+                    <label htmlFor="txName">Name: </label>
+                    <input type="text" id="txName" name="Name" required onChange={this.handleInputChange} />
+                    <br />
+                    <label htmlFor="txProductNumber">ProductNumber: </label>
+                    <input type="text" id="txProductNumber" required name="ProductNumber" onChange={this.handleInputChange} />
+                    <br />
+                    <label htmlFor="txColor">Color: </label>
+                    <input type="text" id="txColor" name="Color" onChange={this.handleInputChange} />
+                    <br />
+                    <label htmlFor="txStandardCost">StandardCost: </label>
+                    <input type="text" id="txStandardCost" name="StandardCost" onChange={this.handleInputChange} />
+                    <br />
+                    <label htmlFor="txListPrice">ListPrice: </label>
+                    <input type="text" id="txListPrice" name="ListPrice" onChange={this.handleInputChange} />
+                    <br />
+                    <label htmlFor="txSize">Size: </label>
+                    <input type="text" id="txSize" name="Size" onChange={this.handleInputChange} />
+                    <br />
+                    <label htmlFor="txWeight">Weight: </label>
+                    <input type="text" id="txWeight" name="Weight" onChange={this.handleInputChange} />
+                    <br />
+                    <label htmlFor="txSize">Size: </label>
+                    <input type="text" id="txSize" name="Size" onChange={this.handleInputChange} />
+                    <br />
+                    <label htmlFor="txSellStartDate">SellStartDate: </label>
+                    <input type="date" id="txSellStartDate" name="SellStartDate" onChange={this.handleInputChange} />
+                    <br />
+                    <label htmlFor="txSellEndDate">SellEndDate: </label>
+                    <input type="date" id="txSellEndDate" name="SellEndDate" onChange={this.handleInputChange} />
+                    <br />
+                    <label htmlFor="txDiscontinuedDate">DiscontinuedDate: </label>
+                    <input type="date" id="txDiscontinuedDate" name="DiscontinuedDate" onChange={this.handleInputChange} />
+                    <br />
+                    <label htmlFor="txThumbNailPhoto">ThumbNailPhoto: </label>
+                    <input type="text" id="txThumbNailPhoto" name="ThumbNailPhoto" onChange={this.handleInputChange} />
                 </fieldset>
                 <input type="submit" value="Create"/>
             </form>
