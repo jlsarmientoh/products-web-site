@@ -27,7 +27,7 @@ class ProductDetail extends React.Component {
                     <p>SellStartDate: {product.SellStartDate}</p>
                     <p>SellEndDate: {product.SellEndDate}</p>
                     <p>DiscontinuedDate: {product.DiscontinuedDate}</p>
-                    <button id="close" onClick={this.handleCloseDetail}>Close</button>
+                    <button id="close" className="button" onClick={this.handleCloseDetail}>Close</button>
                 </dialog>
             );
         } else {

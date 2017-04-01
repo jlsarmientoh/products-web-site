@@ -49,7 +49,21 @@ class ProductTable extends React.Component {
             return (
                 <div>
                     <div>{this.renderDialog()}</div>
-                    <div>{rows}</div>
+                    <div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th scope="col">Product Number</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Color</th>
+                                    <th scope="col">Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {rows}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>);
         } else {
             return null;

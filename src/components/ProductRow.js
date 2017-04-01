@@ -14,9 +14,12 @@ class ProductRow extends React.Component {
 
     render() {
         return (
-            <div className="board-row">
-                {this.props.product.Id} {this.props.product.Name}<DetailButton label="View" onClick={this.handleOnClick}/>
-            </div>
+            <tr className="board-row">
+                <td>{this.props.product.ProductNumber}</td>
+                <td>{this.props.product.Name}</td>
+                <td>{this.props.product.Color}</td>
+                <td><DetailButton label="View" onClick={this.handleOnClick} /></td>
+            </tr>
         );
     }
 }

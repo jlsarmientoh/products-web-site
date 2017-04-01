@@ -40,43 +40,70 @@ class ProductForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
-                <fieldset>
-                    <legend>Create New Product</legend>
-                    <label htmlFor="txName">Name: </label>
-                    <input type="text" id="txName" name="Name" required onChange={this.handleInputChange} />
-                    <br />
-                    <label htmlFor="txProductNumber">ProductNumber: </label>
-                    <input type="text" id="txProductNumber" required name="ProductNumber" onChange={this.handleInputChange} />
-                    <br />
-                    <label htmlFor="txColor">Color: </label>
-                    <input type="text" id="txColor" name="Color" onChange={this.handleInputChange} />
-                    <br />
-                    <label htmlFor="txStandardCost">StandardCost: </label>
-                    <input type="number" id="txStandardCost" name="StandardCost" min="0" onChange={this.handleInputChange} />
-                    <br />
-                    <label htmlFor="txListPrice">ListPrice: </label>
-                    <input type="number" id="txListPrice" name="ListPrice" min="0" onChange={this.handleInputChange} />
-                    <br />
-                    <label htmlFor="txSize">Size: </label>
-                    <input type="text" id="txSize" name="Size" maxLength="5" onChange={this.handleInputChange} />
-                    <br />
-                    <label htmlFor="txWeight">Weight: </label>
-                    <input type="number" id="txWeight" name="Weight" min="0" onChange={this.handleInputChange} />
-                    <br />
-                    <label htmlFor="txSellStartDate">SellStartDate: </label>
-                    <input type="date" id="txSellStartDate" name="SellStartDate" required onChange={this.handleInputChange} />
-                    <br />
-                    <label htmlFor="txSellEndDate">SellEndDate: </label>
-                    <input type="date" id="txSellEndDate" name="SellEndDate" required onChange={this.handleInputChange} />
-                    <br />
-                    <label htmlFor="txDiscontinuedDate">DiscontinuedDate: </label>
-                    <input type="date" id="txDiscontinuedDate" name="DiscontinuedDate" required onChange={this.handleInputChange} />
-                    <br />
-                    <label htmlFor="txThumbNailPhoto">ThumbNailPhoto: </label>
-                    <input type="text" id="txThumbNailPhoto" name="ThumbNailPhoto" onChange={this.handleInputChange} />
-                </fieldset>
-                <input type="submit" value="Create"/>
+            <form onSubmit={this.handleSubmit} method="post" className="basic-grey">
+                <h1>
+                    <span>Please fill the fields below.</span>
+                </h1>
+                             
+                <label>
+                    <span>Name: </span>
+                    <input type="text" name="Name" required onChange={this.handleInputChange} />
+                </label>
+
+                <label>
+                    <span>ProductNumber: </span>
+                    <input type="text" required name="ProductNumber" onChange={this.handleInputChange} />
+                </label>
+
+                <label>
+                    <span>Color: </span>
+                    <input type="text" name="Color" onChange={this.handleInputChange} />
+                </label>
+                
+                <label>
+                    <span>StandardCost: </span>
+                    <input type="number" name="StandardCost" min="0" onChange={this.handleInputChange} />
+                </label>
+                
+                <label>
+                    <span>ListPrice: </span>
+                    <input type="number" name="ListPrice" min="0" onChange={this.handleInputChange} />
+                </label>
+
+                <label>
+                    <span>Size: </span>
+                    <input type="text" name="Size" maxLength="5" onChange={this.handleInputChange} />
+                </label>
+
+                <label>
+                    <span>Weight: </span>
+                    <input type="number" name="Weight" min="0" onChange={this.handleInputChange} />
+                </label>
+                
+                <label>
+                    <span>SellStartDate: </span>
+                    <input type="date" name="SellStartDate" required onChange={this.handleInputChange} />
+                </label>
+                
+                <label>
+                    <span>SellEndDate: </span>
+                    <input type="date" name="SellEndDate" required onChange={this.handleInputChange} />
+                </label>
+                
+                <label>
+                    <span>DiscontinuedDate: </span>
+                    <input type="date" name="DiscontinuedDate" required onChange={this.handleInputChange} />
+                </label>
+                
+                <label>
+                    <span>ThumbNailPhoto: </span>
+                    <input type="text" name="ThumbNailPhoto" onChange={this.handleInputChange} />
+                </label>
+
+                <label>
+                    <span>&nbsp;</span>
+                    <input type="submit" className="button" value="Create" />
+                </label>
             </form>
         );
     }
