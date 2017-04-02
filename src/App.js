@@ -60,7 +60,6 @@ class App extends Component {
     }
 
     handleChangePage(fromIndex, size) {
-        debugger
         this.getProducts(fromIndex, size);
     }
 
