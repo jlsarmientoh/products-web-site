@@ -19,7 +19,7 @@ class TableActions extends React.Component {
     }
 
     handleNextPage() {
-        if (this.state.currentPage <= this.state.lastPage) {
+        if (this.state.currentPage < this.state.lastPage) {
             const nextIndex = this.state.currentPage * this.state.size;
             const newPage = this.state.currentPage + 1;
 
