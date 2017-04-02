@@ -13,6 +13,7 @@ class App extends Component {
         this.state = {
             products: [],
             showForm: false,
+            showLoader:true,
             fromIndex: 1,
             resultSize: 10,
             totalResults: 0
@@ -31,12 +32,12 @@ class App extends Component {
         this.getProducts(this.state.fromIndex, this.state.resultSize);
     }
 
-    getProducts(fromIndex, size) {
+    getProducts(fromIndex, size) {        
         this.productService.getProducts(
             fromIndex,
             size,
             this.updateProductsList,
-            null,
+            function () { alert('No products found') },
             null
         );
     }
@@ -44,7 +45,8 @@ class App extends Component {
     updateProductsList(_products) {
        this.setState({
            products: _products.Results,
-           totalResults: _products.TotalResults
+           totalResults: _products.TotalResults,
+           showLoader: false
         });
     }
 
@@ -60,6 +62,12 @@ class App extends Component {
     }
 
     handleChangePage(fromIndex, size) {
+        const showLoader = true;
+        this.setState(
+            {
+                showLoader: showLoader
+            }
+        );
         this.getProducts(fromIndex, size);
     }
 
@@ -74,9 +82,11 @@ class App extends Component {
 
     hanldeCloseForm() {
         const showForm = false;
+        const showLoader = false;
         this.setState(
             {
-                showForm: showForm
+                showForm: showForm,
+                showLoader: showLoader
             }
         );
     }
@@ -97,6 +107,12 @@ class App extends Component {
         }
     }
 
+    renderLoader() {
+        if (this.state.showLoader) {
+            return <div className="loader"></div>;
+        }
+    }
+
     render() {
         return (
             <div className="App">
@@ -107,7 +123,7 @@ class App extends Component {
             <p className="App-intro">
                 Scroll down to see the list of products.
             </p>
-
+            {this.renderLoader()}
             <div className="container">
                     <div>
                         {this.renderProductForm()}

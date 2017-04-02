@@ -204,6 +204,7 @@ tbody tr:nth-child(even) {
 
 .button {
     background: #FFCC02;
+    margin: 2px;
     border: none;
     padding: 10px 25px 10px 25px;
     color: #585858;
@@ -221,4 +222,55 @@ tbody tr:nth-child(even) {
     color: #333;
     background-color: #EBEBEB;
 }
+/*Action Bar*/
+.action-bar{
+    padding: 10px;
+}
 
+.action-bar > div {
+    padding: 10px;
+}
+
+.action-bar label > span {
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/*Loader*/
+
+.loader {
+    border: 10px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 10px solid blue;
+    border-bottom: 10px solid blue;
+    width: 50px;
+    height: 50px;
+    left: 50%;
+    top: 0px;
+    position:relative;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    z-index: 9999;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

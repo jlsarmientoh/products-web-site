@@ -93,7 +93,7 @@ class TableActions extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="action-bar">
                 <div>
                     <button name="first" className="button" onClick={this.handleFirstPage} > First </button>
                     <button name="previous" className="button" onClick={this.handlePreviosPage} >Prev</button>
@@ -106,10 +106,8 @@ class TableActions extends React.Component {
                 <div>
                     <label><span> Page: {this.state.currentPage} Of: {this.state.lastPage} </span></label>
                     <label><span> | Total: {this.state.total} </span></label>
-                    <label>
-                        | Products per Page: 
-                        <input type="number" name="size" value={this.state.size} min="1" onChange={this.handleInputChange} />
-                    </label>
+                    <label><span> | Products per Page:</span> </label>
+                    <label><span><input type="number" name="size" value={this.state.size} min="1" onChange={this.handleInputChange} /></span></label>
                 </div>
             </div>
         );
