@@ -15,10 +15,11 @@ class ProductForm extends React.Component {
             SellEndDate: '',
             DiscontinuedDate: '',
             ThumbNailPhoto: ''
-        }
+        };
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.hanldeCloseForm = this.hanldeCloseForm.bind(this);
     }
 
     handleInputChange(event) {
@@ -35,6 +36,11 @@ class ProductForm extends React.Component {
         const newProduct = this.state;
 
         this.props.onFormSubmit(newProduct);
+        event.preventDefault();
+    }
+
+    hanldeCloseForm(event) {
+        this.props.onFormCancel();
         event.preventDefault();
     }
 
@@ -101,8 +107,9 @@ class ProductForm extends React.Component {
                 </label>
 
                 <label>
-                    <span>&nbsp;</span>
                     <input type="submit" className="button" value="Create" />
+                     
+                    <button type="button" className="button" onClick={this.hanldeCloseForm}>Cancel</button>
                 </label>
             </form>
         );

@@ -1,6 +1,6 @@
 ﻿import React from 'react';
-import ProductRow from './ProductRow'
-import ProductDetail from './ProductDetail'
+import ProductRow from './ProductRow';
+import ProductDetail from './ProductDetail';
 
 class ProductTable extends React.Component {
     constructor(props) {
@@ -39,6 +39,7 @@ class ProductTable extends React.Component {
         const product = this.state.selectedItem;
         return <ProductDetail open={open} product={product} onCloseDetail={this.handleCloseDetail}/>
     }
+
     render() {
         if (this.props.products.length > 0) {
             let rows = [];

@@ -7,8 +7,8 @@ class ProductService {
         this.api = "api/products"
     }
     
-    getProducts = function (_onSuccess, _onFail, _finally) {
-        var requestUrl = this.host + this.api;
+    getProducts = function (_fromIndex, _size, _onSuccess, _onFail, _finally) {
+        var requestUrl = this.host + this.api + '?fromIndex=' + _fromIndex + '&maxResults=' + _size;
         this._sendRequest(requestUrl, "GET", null, _onSuccess, _onFail, _finally);
     }
 
